@@ -1,5 +1,5 @@
-import Post from "../../../models/postModel";
-import dbConnect from "../../../utils/db";
+import Post from "../../../../models/postModel";
+import dbConnect from '../../../../utils/db';
 
 
 export default async function getPosts(req, res) {

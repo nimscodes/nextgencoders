@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { FaCodeBranch } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 
 function NewPost() {
@@ -47,7 +48,7 @@ function NewPost() {
     return (
         <div className="w-[85%] mx-auto bg-white min-h-screen">
             <NavBar handleSubmit={handleSubmit} />
-            <div className="max-w-3xl mx-auto border">
+            <div className="max-w-3xl mx-auto">
                 <form id='form1' onSubmit={handleSubmit} className="px-2 py-2 animate__animated animate__fadeIn">
                     <div className="mb-4">
                         <input
@@ -105,20 +106,20 @@ function NewPost() {
 export default NewPost;
 
 
-const NavBar = ({handleSubmit}) => {
+const NavBar = ({ handleSubmit }) => {
     return (
         <nav className='w-full p-4 flex flex-col'>
             <div className='flex items-center justify-between' >
-                <div className='flex gap-4 items-center'>
-                    <div id='logoText' className='flex items-center text-gray-800 cursor-pointer'>
+                <div className='flex gap-4 items-center text-xl'>
+                    <Link href='/' id='logoText' className='flex items-center text-gray-800 cursor-pointer'>
                         <h1 className='font-bold'>NGC</h1>
-                        <span className='text-xs'><FaCodeBranch /></span>
-                    </div>
+                        <span><FaCodeBranch /></span>
+                    </Link>
                     <div className='font-light text-sm'>Draft in User</div>
                 </div>
                 <input value='Publish' type='button' onClick={handleSubmit} form='form1' className='bg-green-600 text-sm text-white font-light py-0.5 px-2.5 rounded-xl cursor-pointer' />
             </div>
-            <hr className="w-full h-[1px] mx-auto my-5 bg-gray-200 border-0 rounded"></hr>
+            <hr className="w-full mx-auto my-2 bg-gray-200 border-1 rounded"></hr>
         </nav>
     )
 }
