@@ -2,10 +2,10 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { MdFavoriteBorder } from 'react-icons/md'
-import { FaInfoCircle } from 'react-icons/fa'
 import Link from 'next/link'
-import IconWithText from '../icon-with-text/IconWithText'
 import { useState } from 'react'
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css';
 
 
 const PostItem = ({ post }) => {
@@ -13,17 +13,13 @@ const PostItem = ({ post }) => {
 
 
     const router = useRouter()
-    const pathName = post.title.toLowerCase().replace(/ /g, '-');
-    console.log(pathName);
-    const encodedTitle = encodeURIComponent(post.title)
+    // const pathName = post.title.toLowerCase().replace(/ /g, '-');
+    // console.log(pathName);
+    // const encodedTitle = encodeURIComponent(post.title)
 
     const handleClick = (e) => {
         // Navigate to the post page when the post is clicked
         e.preventDefault();
-        // router.push({
-        //     pathname: '/post/[pid]',
-        //     query: {pid : post._id}
-        // });
         router.push(`/post/${post._id}`)
     };
 
@@ -57,13 +53,13 @@ const PostItem = ({ post }) => {
             </div>
             <div id='cat_like' className='flex justify-between items-center px-2 py-2'>
                 <div className='flex gap-1 items-center text-xs'>
-                    <Link href={`/category/${post.category}`} className='font-light bg-gray-100 p-1.5 rounded-xl cursor-pointer'>{post.category}</Link>
+                    <Link href={`/category/${post.category}`} className='font-light bg-gray-100 py-1 px-2 rounded-xl cursor-pointer'>{post.category}</Link>
                     <span className='font-light text-gray-500'>{readingTime} mins read</span>
                 </div>
-                <span className='text-gray-500'> <MdFavoriteBorder /> </span>
-
+                <span data-tooltip-id='my-tooltip' data-tooltip-content='Add to Favorites' className='text-gray-500 cursor-pointer'> <MdFavoriteBorder /> </span>
+                <Tooltip id='my-tooltip' />
             </div>
-            <hr className="w-full h-[1px] mx-auto my-5 bg-gray-300 border-0 rounded"></hr>
+            <hr className="w-full mx-auto my-5 bg-gray-300 border-1 rounded"></hr>
         </div>
     )
 }
