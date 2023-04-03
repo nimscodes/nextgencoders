@@ -4,10 +4,10 @@ import dbConnect from '../../../../utils/db';
 
 export default async function handler(req, res) {
 
-  await dbConnect();
+  
 
   try {
-
+    await dbConnect();
     const posts = await Post.find();
     res.status(200).json({ message: 'Posts retrieved successfully', posts });
   } catch (error) {
