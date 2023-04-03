@@ -21,13 +21,13 @@ function CategoryList({ categories }) {
             <span className='cursor-pointer font-bold text-gray-500' onClick={handlePrevious} disabled={page === 0}>
                 <GrPrevious />
             </span>
-            <div className='flex gap-2'>
+            <ul className='flex gap-2'>
                 {categories.slice(startIndex, endIndex).map((category) => (
                     <Link href={`/category/${category}`}>
                         <li className='cursor-pointer list-none' key={category.toLowerCase()}>| {category}</li>
                     </Link>
                 ))}
-            </div>
+            </ul>
             <span className='cursor-pointer font-bold text-gray-500' onClick={handleNext} disabled={endIndex >= categories.length}>
                 <GrNext />
             </span>

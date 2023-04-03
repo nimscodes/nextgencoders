@@ -48,12 +48,12 @@ function PostPage({ post }) {
                     </div>
                     <div className="flex gap-10 items-center">
                         <div id='icons' className="flex gap-4 text-lg text-gray-400">
-                            <span className='my-icon-element' data-tooltip-content="Share on Twitter"><FaTwitter /></span>
-                            <span className='my-icon-element' data-tooltip-content="Share on Facebook"><FaFacebook /></span>
-                            <span className='my-icon-element' data-tooltip-content="Share on LinkedIn"><FaLinkedin /></span>
-                            <span className='my-icon-element' data-tooltip-content="Copy Link"><FiShare2 /></span>
+                            <span className='my-icon-element cursor-pointer' data-tooltip-content="Share on Twitter"><FaTwitter /></span>
+                            <span className='my-icon-element cursor-pointer' data-tooltip-content="Share on Facebook"><FaFacebook /></span>
+                            <span className='my-icon-element cursor-pointer' data-tooltip-content="Share on LinkedIn"><FaLinkedin /></span>
+                            <span className='my-icon-element cursor-pointer' data-tooltip-content="Copy Link"><FiShare2 /></span>
                         </div>
-                        <span className="text-lg text-gray-500 my-icon-element" data-tooltip-content="Add to Favorites"><MdFavoriteBorder /></span>
+                        <span className="text-lg text-gray-500 my-icon-element cursor-pointer" data-tooltip-content="Add to Favorites"><MdFavoriteBorder /></span>
                         <Tooltip anchorSelect=".my-icon-element" />
                     </div>
                 </div>
