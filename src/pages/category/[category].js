@@ -20,11 +20,11 @@ export default function Category({ posts, category }) {
 
 export async function getServerSideProps(context) {
   const { category } = context.query;
-  let dev = process.env.NODE_ENV !== 'production';
-  let { DEV_URL, PROD_URL } = process.env;
+  // let dev = process.env.NODE_ENV !== 'production';
+  // let { DEV_URL, PROD_URL } = process.env;
 
   try {
-    const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts/getPostByCategory?category=${category}`);
+    const res = await fetch(`api/posts/getPostByCategory?category=${category}`);
     const { posts } = await res.json();
 
     return { props: { posts, category } };
