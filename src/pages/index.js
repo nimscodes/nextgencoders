@@ -15,11 +15,11 @@ export default function Home({posts, categories}) {
 }
 
 export async function getServerSideProps(context) {
-  // let dev = process.env.NODE_ENV !== 'production';
-  // let { DEV_URL, PROD_URL } = process.env;
+  let dev = process.env.NODE_ENV !== 'production';
+  let { DEV_URL, PROD_URL } = process.env;
   
   try {
-    const res = await fetch(`/api/posts/getPosts`);
+    const res = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts/getPosts`);
     const { posts } = await res.json();
     const categories = await getAllCategories();
 
