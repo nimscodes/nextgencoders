@@ -23,8 +23,8 @@ function CategoryList({ categories }) {
             </span>
             <ul className='flex gap-2'>
                 {categories.slice(startIndex, endIndex).map((category) => (
-                    <Link href={`/category/${category}`}>
-                        <li className='cursor-pointer list-none' key={category.toLowerCase()}>| {category}</li>
+                    <Link href={`/category/${category}`}
+                        className='cursor-pointer list-none' key={category.toLowerCase()}>| {category}
                     </Link>
                 ))}
             </ul>
