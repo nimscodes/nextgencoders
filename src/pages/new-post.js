@@ -19,7 +19,7 @@ function NewPost() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('/api/createPost', formData)
+        axios.post('/api/posts/createPost', formData)
             .then(function (response) {
                 console.log(response);
                 setFormData({
