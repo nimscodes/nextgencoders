@@ -2,7 +2,7 @@ import Post from "../../../../models/postModel";
 import dbConnect from "../../../../utils/db";
 
 
-export default async function getPostsByCategory(req, res) {
+export default async function handler(req, res) {
     const { category } = req.query;
     try {
 

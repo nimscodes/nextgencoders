@@ -3,7 +3,7 @@ import dbConnect from "../../../utils/db";
 
 dbConnect()
 
-export default async function deletePost(req, res) {
+export default async function handler(req, res) {
     const { id } = req.query;
     try {
       await Post.findByIdAndDelete(id);
@@ -13,4 +13,3 @@ export default async function deletePost(req, res) {
     }
   }
   
-  export { getPostsByCategory };
