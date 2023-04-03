@@ -1,4 +1,4 @@
-import Post from '../../../../models/postModel'
+import Post from "../../../../models/postModel";
 import dbConnect from '../../../../utils/db';
 
 
